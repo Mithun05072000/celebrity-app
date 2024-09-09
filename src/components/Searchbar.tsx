@@ -7,15 +7,6 @@ const SearchBar: React.FC = () => {
   const [filteredUsers, setFilteredUsers] = useState<User[]>([]);
   const [users, setUsers] = useState<User[]>([]);
 
-  const handleSearch = (query: string) => {
-    const lowercasedQuery = query.toLowerCase();
-    const results = users.filter((user) => {
-      const first = user.first?.toLowerCase() || "";
-      const last = user.last?.toLowerCase() || "";
-      return first.includes(lowercasedQuery) || last.includes(lowercasedQuery);
-    });
-    setFilteredUsers(results);
-  };
 
   return (
     <div>
